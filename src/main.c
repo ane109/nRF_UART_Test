@@ -35,7 +35,6 @@
 // LOG_MODULE_REGISTER(nrf_uart_test, LOG_LEVEL_INF);
 
 
-
 /* ========== Workqueue Macros ========== */
 
 /* Workqueue stack size */
@@ -67,7 +66,6 @@ static K_THREAD_STACK_DEFINE(work_queue_stack_area, WORKQUEUE_STACK_SIZE);
 struct k_work uart_rx_work;
 
 
-
 /* ========== UART Objects ========== */
 
 /* Device pointer of the UART hardware */
@@ -91,8 +89,6 @@ void uart_work_handler(struct k_work *work_term)
 	LOG_INF("Work queue item started");
 	LOG_DBG("Data received: %s", rx_app_buf);
 
-	/* TODO: check for correct keyword at beginning of rx_uart_buf, AT+CNA= */
-
 	/*
 	 *
 	 *
@@ -101,7 +97,7 @@ void uart_work_handler(struct k_work *work_term)
 	 * 
 	 */
 
-	/* Uncomment to emulate a few seconds of work, for testing purposes*/
+	/* Uncomment to emulate a few seconds of work, for testing purposes */
 	// for(volatile int count_out = 0; count_out < 30000000; count_out ++);
 
 	/* Set flag to clear buffer of any data receieved while thread was processing */
@@ -109,7 +105,6 @@ void uart_work_handler(struct k_work *work_term)
 	uart_rx_enable(uart, rx_uart_buf, sizeof(rx_uart_buf), UART_RECEIVE_TIMEOUT);
 	LOG_INF("Work finished");
 }
-
 
 
 /* ========== UART Functions ========== */
