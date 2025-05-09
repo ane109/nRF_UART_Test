@@ -1,6 +1,6 @@
 # nRF_UART_Test
 
- Program to demonstrate and test Async UART behavior in Zephyr RTOS
+ Program to demonstrate and test Async UART behavior in Zephyr RTOS.
 
 The UART receiver is set up a bit differently than the receiver in the [Multi-NUS](https://github.com/NordicMatt/multi-NUS/blob/master/src/main.c) Bluetooth example. Instead of using continuous reception for the receiver, this uses a fixed 100 char buffer with some extra control flow logic to handle errors and overflows.
 
